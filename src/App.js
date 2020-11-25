@@ -15,20 +15,20 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <NavBar title="Strivestaurant" />
+          <NavBar title='Strivestaurant' />
           <Route
-            path="/"
+            path='/'
             exact
             // render={(props) => (
             //   <Home title="Stefano" history={props.history} location={props.location} match={props.match} />
             // )}
             render={(
               props // props are history, location, match
-            ) => <Home title="Stefano" {...props} />} // in this way you can pass your own props along with the router ones
+            ) => <Home title='Stefano' {...props} />} // in this way you can pass your own props along with the router ones
           />
-          <Route path="/menu" exact component={Menu} />
-          <Route path="/reservation" exact component={Reservations} />
-          <Route path="/details/:stefano" component={DishDetails} />
+          <Route path='/menu' exact component={Menu} />
+          <Route path='/reservation' exact render={(props) => <Reservations Header='Strive Reservations' />} />
+          <Route path='/details/:stefano' component={DishDetails} />
         </Router>
       </>
     );
