@@ -5,8 +5,8 @@ import { Alert, Container } from "react-bootstrap";
 
 const Menu = () => (
   <Container>
-    {!dishes && <Alert>Work in progress...</Alert>}
-    {dishes && dishes.map((dish) => <SingleDish dish={dish} key={dish.id} />)}
+    {dishes ? dishes.map((dish) => <SingleDish dish={dish} key={dish.id} />) : <div><p>Work in progress...</p></div>}
+
   </Container>
 );
 export default Menu;
